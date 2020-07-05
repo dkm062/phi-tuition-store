@@ -1,5 +1,5 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<!--<div class="woof-admin-preloader"></div>-->
+
 <div class="woof-admin-preloader">
     <div class="cssload-loader">
         <div class="cssload-inner cssload-one"></div>
@@ -34,8 +34,23 @@
         <?php endif; ?>
 
 
-        <h3 style="color: red; margin-bottom: 1px;"><?php printf(__('WOOF - WooCommerce Products Filter v.%s', 'woocommerce-products-filter'), WOOF_VERSION) ?></h3>
-        <i><?php printf(esc_html__('Actualized for WooCommerce v.%s.x', 'woocommerce-products-filter'), WOOCOMMERCE_VERSION) ?></i><br />
+        <div style="clear: both; overflow: hidden;">
+            <div style="float: left;">
+                <h3 style="color: red; margin-bottom: 1px;"><?php printf(__('WOOF - WooCommerce Products Filter v.%s', 'woocommerce-products-filter'), WOOF_VERSION) ?></h3>
+                <i><?php printf(esc_html__('Actualized for WooCommerce v.%s.x', 'woocommerce-products-filter'), WOOCOMMERCE_VERSION) ?></i><br />
+
+            </div>
+
+            <?php if (time() < strtotime('1st July 2020 14:00')): ?>
+                <div style="float: right;">
+                    <a href="https://products-filter.com/a/buy" title="Envato Mid Year Sale 2020 - 30-50% discount. Sale ends 1st July 2020!" target="_blank"><img height="60" src="<?php echo WOOF_LINK ?>img/envato-mid-sale-2020.png" alt="" /></a>
+                </div>
+            <?php endif; ?>
+        </div>
+
+
+
+
         <br />
 
         <input type="hidden" name="woof_settings" value="" />
@@ -126,7 +141,7 @@
                         $items_order = array();
                         $taxonomies = $this->get_taxonomies();
                         $taxonomies_keys = array_keys($taxonomies);
-                        if (isset($woof_settings['items_order']) AND ! empty($woof_settings['items_order'])) {
+                        if (isset($woof_settings['items_order']) AND!empty($woof_settings['items_order'])) {
                             $items_order = explode(',', $woof_settings['items_order']);
                         } else {
                             $items_order = array_merge($this->items_keys, $taxonomies_keys);
@@ -305,7 +320,7 @@
                                     ?>
 
                                     <h4<?php _e('Plainoverlay color', 'woocommerce-products-filter') ?></h4>
-                                    <input type="text" name="woof_settings[plainoverlay_color]" value="<?php echo $plainoverlay_color ?>" id="woof_color_picker_plainoverlay_color" class="woof-color-picker" />
+                                        <input type="text" name="woof_settings[plainoverlay_color]" value="<?php echo $plainoverlay_color ?>" id="woof_color_picker_plainoverlay_color" class="woof-color-picker" />
 
                                 </div>
 
@@ -1065,7 +1080,7 @@
                                             <div class="select-wrap">
                                                 <select name="woof_settings[storage_type]">
                                 <?php foreach ($storage_types as $key => $value) : ?>
-                                                                                                                                                                                                                                                                                            <option value="<?php echo $key; ?>" <?php if ($woof_settings['storage_type'] == $key): ?>selected="selected"<?php endif; ?>><?php echo $value; ?></option>
+                                                                                                                                                                                                                                                                                                    <option value="<?php echo $key; ?>" <?php if ($woof_settings['storage_type'] == $key): ?>selected="selected"<?php endif; ?>><?php echo $value; ?></option>
                                 <?php endforeach; ?>
                                                 </select>
                                             </div>
@@ -1215,7 +1230,7 @@
 
                                 </div><!--/ .woof-control-section-->
 
-                                <?php if (!isset($woof_settings['woof_turbo_mode']['enable']) OR $woof_settings['woof_turbo_mode']['enable'] != 1 OR ! class_exists("WOOF_EXT_TURBO_MODE")) { ?>
+                                <?php if (!isset($woof_settings['woof_turbo_mode']['enable']) OR $woof_settings['woof_turbo_mode']['enable'] != 1 OR!class_exists("WOOF_EXT_TURBO_MODE")) { ?>
                                     <div class="woof-control-section">
 
                                         <h5><?php _e("Cache dynamic recount number for each item in filter", 'woocommerce-products-filter') ?></h5>
@@ -1565,7 +1580,7 @@
 
 
                                     <!-- ----------------------------------------- -->
-                                    <?php if (isset($this->settings['custom_extensions_path']) AND ! empty($this->settings['custom_extensions_path'])): ?>
+                                    <?php if (isset($this->settings['custom_extensions_path']) AND!empty($this->settings['custom_extensions_path'])): ?>
 
                                         <br />
                                         <hr />
@@ -1629,7 +1644,7 @@
 
 
                                     <?php
-                                    if (!isset($woof_settings['activated_extensions']) OR ! is_array($woof_settings['activated_extensions'])) {
+                                    if (!isset($woof_settings['activated_extensions']) OR!is_array($woof_settings['activated_extensions'])) {
                                         $woof_settings['activated_extensions'] = array();
                                     }
                                     ?>
@@ -2508,7 +2523,7 @@
                 <h3><?php _e('Drop-down OR radio', 'woocommerce-products-filter') ?></h3>
                 <strong><?php _e('Drop-down OR radio price filter ranges', 'woocommerce-products-filter') ?></strong>
                 <span><?php _e('Ranges for price filter.', 'woocommerce-products-filter') ?></span>
-                <!-- <span><?php //printf(__('Example: 0-50,51-100,101-i. Where "i" is infinity. Max price is %s.', 'woocommerce-products-filter'), WOOF_HELPER::get_max_price())                   ?></span> -->
+                <!-- <span><?php //printf(__('Example: 0-50,51-100,101-i. Where "i" is infinity. Max price is %s.', 'woocommerce-products-filter'), WOOF_HELPER::get_max_price())                     ?></span> -->
                 <span><?php echo __('Example: 0-50,51-100,101-i. Where "i" is infinity.', 'woocommerce-products-filter') ?></span>
             </div>
 
@@ -2738,7 +2753,7 @@ function woof_print_tax($key, $tax, $woof_settings) {
             if (isset($woof_settings['comparison_logic'][$key])) {
                 $comparison_logic = $woof_settings['comparison_logic'][$key];
             }
-            if (isset($woof_settings['tax_type'][$key]) AND ! in_array($woof_settings['tax_type'][$key], $logic_restriction) AND $comparison_logic == 'AND') {
+            if (isset($woof_settings['tax_type'][$key]) AND!in_array($woof_settings['tax_type'][$key], $logic_restriction) AND $comparison_logic == 'AND') {
                 $comparison_logic = 'OR';
             }
 

@@ -5,7 +5,7 @@ Tags: filter, products filter, woocommerce, products, ajax filter, woof, categor
 Requires at least: 4.1.0
 Tested up to: 5.4
 Requires PHP: 5.4
-Stable tag: 1.2.4
+Stable tag: 1.2.4.1
 
 WooCommerce Products Filter – flexible, easy and robust professional filter for products in the WooCommerce store
 

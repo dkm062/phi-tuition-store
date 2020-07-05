@@ -7,14 +7,14 @@
   Tested up to: WP 5.4
   Author: realmag777
   Author URI: https://pluginus.net/
-  Version: 1.2.4
+  Version: 1.2.4.1
   Requires PHP: 5.4
   Tags: filter,search,woocommerce,woocommerce filter,woocommerce product filter,woocommerce products filter,products filter,product filter,filter of products,filter for products,filter for woocommerce
   Text Domain: woocommerce-products-filter
   Domain Path: /languages
   Forum URI: https://pluginus.net/support/forum/woof-woocommerce-products-filter/
   WC requires at least: 3.6.0
-  WC tested up to: 4.0
+  WC tested up to: 4.2
  */
 
 //update_option('woof_settings', '');//nearly absolute reset of the plugin settings
