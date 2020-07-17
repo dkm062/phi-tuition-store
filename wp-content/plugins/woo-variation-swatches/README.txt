@@ -181,7 +181,7 @@ In the free WooCommerce attribute variation plugin, besides creating size, brand
  [Live Demo & Documentation](http://bit.ly/3rd-demo-readme-hover-swatches-border-styling)
 <hr />
 👉 Active Swatches Border Styling
- [Live Demo & Documentation](http://bit.ly/3rd-demo-readme-hover-swatches-border-styling)
+ [Live Demo & Documentation](https://bit.ly/active-border-styling)
 <hr />
 👉 Archive Page Swatches Alignment
  [Live Demo & Documentation](http://bit.ly/3rd-demo-readme-shop-alignment)
@@ -380,6 +380,14 @@ And your are ready to go.
 12. Global Variation Color Swatches Attribute List Preview
 
 == Changelog ==
+
+= 1.0.85 =
+
+* Update: Support WooCommerce 4.3 version
+
+= 1.0.84 =
+
+* Add: `wvs-no-css` will add on when stylesheet disabled. `wvs-css` will add on when stylesheet enabled, `wvs-no-tooltip` will add on when tooltip disabled, `wvs-tooltip` will add on when tooltip enabled.
 
 = 1.0.83 =
 

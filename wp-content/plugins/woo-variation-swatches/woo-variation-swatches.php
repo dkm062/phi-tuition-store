@@ -4,7 +4,7 @@
 	 * Plugin URI: https://wordpress.org/plugins/woo-variation-swatches/
 	 * Description: Beautiful colors, images and buttons variation swatches for woocommerce product attributes. Requires WooCommerce 3.2+
 	 * Author: Emran Ahmed
-	 * Version: 1.0.83
+	 * Version: 1.0.85
 	 * Domain Path: /languages
 	 * Requires at least: 4.8
 	 * Tested up to: 5.4
@@ -20,7 +20,7 @@
 		
 		final class Woo_Variation_Swatches {
 			
-			protected $_version = '1.0.83';
+			protected $_version = '1.0.85';
 			
 			protected static $_instance = null;
 			private          $_settings_api;
@@ -294,7 +294,9 @@
 				array_push( $classes, sprintf( 'wvs-style-%s', $this->get_option( 'style' ) ) );
 				array_push( $classes, sprintf( 'wvs-attr-behavior-%s', $this->get_option( 'attribute-behavior' ) ) );
 				// array_push( $classes, sprintf( 'woo-variation-swatches-tooltip-%s', $this->get_option( 'tooltip' ) ? 'enabled' : 'disabled' ) );
+				array_push( $classes, sprintf( 'wvs%s-tooltip', $this->get_option( 'tooltip' ) ? '' : '-no' ) );
 				// array_push( $classes, sprintf( 'woo-variation-swatches-stylesheet-%s', $this->get_option( 'stylesheet' ) ? 'enabled' : 'disabled' ) );
+				array_push( $classes, sprintf( 'wvs%s-css', $this->get_option( 'stylesheet' ) ? '' : '-no' ) );
 				
 				if ( $this->is_pro_active() ) {
 					array_push( $classes, 'wvs-pro' );
