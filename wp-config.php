@@ -23,10 +23,10 @@
 define( 'DB_NAME', 'phi-tuition-store' );
 
 /** MySQL database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'inucleus' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', 'AzkJNG9p4YkL2v6F' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );

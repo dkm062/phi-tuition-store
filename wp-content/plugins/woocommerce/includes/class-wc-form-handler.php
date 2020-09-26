@@ -785,6 +785,11 @@ class WC_Form_Handler {
 			if ( $url ) {
 				wp_safe_redirect( $url );
 				exit;
+			}elseif ( 'yes' === get_option( 'woocommerce_cart_redirect_to_shop_after_add' ) ) {
+				// wp_safe_redirect( wc_get_cart_url() );
+				$customurl = 'https://phi-tuition.eu/store'; 
+				wp_safe_redirect( $customurl );
+				exit;
 			} elseif ( 'yes' === get_option( 'woocommerce_cart_redirect_after_add' ) ) {
 				wp_safe_redirect( wc_get_cart_url() );
 				exit;

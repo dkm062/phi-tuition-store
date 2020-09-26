@@ -1,0 +1,13 @@
+2020-08-29T09:25:39+00:00 CRITICAL Uncaught Error: Call to undefined function wc_get_shop_url() in /var/www/phi-tuition.eu/store/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php:791
+Stack trace:
+#0 /var/www/phi-tuition.eu/store/wp-includes/class-wp-hook.php(287): WC_Form_Handler::add_to_cart_action('')
+#1 /var/www/phi-tuition.eu/store/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /var/www/phi-tuition.eu/store/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/phi-tuition.eu/store/wp-settings.php(562): do_action('wp_loaded')
+#4 /var/www/phi-tuition.eu/store/wp-config.php(90): require_once('/var/www/phi-tu...')
+#5 /var/www/phi-tuition.eu/store/wp-load.php(37): require_once('/var/www/phi-tu...')
+#6 /var/www/phi-tuition.eu/store/wp-blog-header.php(13): require_once('/var/www/phi-tu...')
+#7 /var/www/phi-tuition.eu/store/index.php(17): require('/var/www/phi-tu...')
+#8 {main}
+  thrown in /var/www/phi-tuition.eu/store/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php on line 791
+

@@ -195,6 +195,7 @@ class WC_Emails {
 		add_action( 'woocommerce_email_order_details', array( $this, 'order_downloads' ), 10, 4 );
 		add_action( 'woocommerce_email_order_details', array( $this, 'order_details' ), 10, 4 );
 		add_action( 'woocommerce_email_order_meta', array( $this, 'order_meta' ), 10, 3 );
+		add_action( 'woocommerce_email_order_meta1', array( $this, 'order_meta1' ), 10, 3 );
 		add_action( 'woocommerce_email_customer_details', array( $this, 'customer_details' ), 10, 3 );
 		add_action( 'woocommerce_email_customer_details', array( $this, 'email_addresses' ), 20, 3 );
 
@@ -524,6 +525,38 @@ class WC_Emails {
 					}
 				}
 			}
+		}
+	}
+	public function order_meta1( $order, $sent_to_admin = false, $plain_text = false ) {
+		$fields = apply_filters( 'woocommerce_email_order_meta_fields', array(), $sent_to_admin, $order );
+
+		/**
+		 * Deprecated woocommerce_email_order_meta_keys filter.
+		 *
+		 * @since 2.3.0
+		 */
+		$_fields = apply_filters( 'woocommerce_email_order_meta_keys', array(), $sent_to_admin );
+
+		if ( $_fields ) {
+			foreach ( $_fields as $key => $field ) {
+				if ( is_numeric( $key ) ) {
+					$key = $field;
+				}
+
+				$fields[ $key ] = array(
+					'label' => wptexturize( $key ),
+					'value' => wptexturize( get_post_meta( $order->get_id(), $field, true ) ),
+				);
+			}
+		}
+
+		if ( $fields ) {
+				foreach ( $fields as $field ) {
+					if ( isset( $field['label'] ) && isset( $field['value'] ) && $field['value']  && $field['label'] == 'Name') {
+						echo $field['value']; // WPCS: XSS ok.
+					}
+				}
+			
 		}
 	}
 

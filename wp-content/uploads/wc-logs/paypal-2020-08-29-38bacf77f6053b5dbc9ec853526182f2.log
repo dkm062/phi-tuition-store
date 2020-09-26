@@ -1,0 +1,43 @@
+2020-08-29T10:19:23+00:00 INFO Generating payment form for order 1739. Notify URL: https://phi-tuition.eu/store/wc-api/WC_Gateway_Paypal/
+2020-08-29T10:19:23+00:00 INFO PayPal Request Args for order 1739: Array
+(
+    [cmd] => _cart
+    [business] => dkm062@gmail.com
+    [no_note] => 1
+    [currency_code] => GBP
+    [charset] => utf-8
+    [rm] => 2
+    [upload] => 1
+    [return] => https://phi-tuition.eu/store/checkout/order-received/1739/?key=wc_order_VD9qaZehr6udt&utm_nooverride=1
+    [cancel_return] => https://phi-tuition.eu/store/cart/?cancel_order=true&order=wc_order_VD9qaZehr6udt&order_id=1739&redirect&_wpnonce=8456620b48
+    [page_style] => 
+    [image_url] => 
+    [paymentaction] => sale
+    [invoice] => WC-1739
+    [custom] => {"order_id":1739,"order_key":"wc_order_VD9qaZehr6udt"}
+    [notify_url] => https://phi-tuition.eu/store/wc-api/WC_Gateway_Paypal/
+    [first_name] => ***
+    [last_name] => ***
+    [address1] => ***
+    [address2] => ***
+    [city] => ***
+    [state] => ***
+    [zip] => ***
+    [country] => ***
+    [email] => ***@***
+    [night_phone_a] => ***
+    [night_phone_b] => ***
+    [no_shipping] => 1
+    [tax_cart] => 0.00
+    [discount_amount_cart] => 24.00
+    [item_name_1] => A-Level, Year-1 Chemistry (Year: 12, Examination board: AQA, Days: Mon, Time: 17:00 - 19:00, Hours per week: 2, Offered onli...
+    [quantity_1] => 1
+    [amount_1] => 240
+    [item_number_1] => 
+    [item_name_2] => Registration fee
+    [quantity_2] => 1
+    [amount_2] => 25
+    [item_number_2] => 
+    [bn] => WooThemes_Cart
+)
+

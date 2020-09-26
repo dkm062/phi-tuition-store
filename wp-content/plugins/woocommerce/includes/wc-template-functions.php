@@ -2643,7 +2643,7 @@ if ( ! function_exists( 'woocommerce_form_field' ) ) {
 			$args['class'][] = 'validate-required';
 			$required        = '&nbsp;<abbr class="required" title="' . esc_attr__( 'required', 'woocommerce' ) . '">*</abbr>';
 		} else {
-			$required = '&nbsp;<span class="optional">(' . esc_html__( 'optional', 'woocommerce' ) . ')</span>';
+			$required = '&nbsp;<span class="optional">' . esc_html__( '', 'woocommerce' ) . '</span>';
 		}
 
 		if ( is_string( $args['label_class'] ) ) {
@@ -3214,9 +3214,9 @@ if ( ! function_exists( 'wc_display_item_meta' ) ) {
 		$args    = wp_parse_args(
 			$args,
 			array(
-				'before'       => '<ul class="wc-item-meta"><li>',
+				'before'       => '<ul class="wc-item-meta"><li class="d-flex">',
 				'after'        => '</li></ul>',
-				'separator'    => '</li><li>',
+				'separator'    => '</li><li class="d-flex">',
 				'echo'         => true,
 				'autop'        => false,
 				'label_before' => '<strong class="wc-item-meta-label">',

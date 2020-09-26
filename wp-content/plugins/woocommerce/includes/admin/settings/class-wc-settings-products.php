@@ -315,6 +315,13 @@ class WC_Settings_Products extends WC_Settings_Page {
 							'default'       => 'no',
 							'type'          => 'checkbox',
 							'checkboxgroup' => 'start',
+						),						
+						array(
+							'desc'          => __( 'Redirect to the shop page after successful addition', 'woocommerce' ),
+							'id'            => 'woocommerce_cart_redirect_to_shop_after_add',
+							'default'       => 'no',
+							'type'          => 'checkbox',
+							'checkboxgroup' => 'start',
 						),
 						array(
 							'desc'          => __( 'Enable AJAX add to cart buttons on archives', 'woocommerce' ),
