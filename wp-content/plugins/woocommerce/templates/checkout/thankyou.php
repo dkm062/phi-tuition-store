@@ -17,7 +17,18 @@
 
 defined( 'ABSPATH' ) || exit;
 ?>
-
+<!-- Global site tag (gtag.js) - Google Ads: 561526616 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-561526616"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-561526616');
+</script>
+<!-- Event snippet for Submit lead form conversion page -->
+<script>
+gtag('event', 'conversion', {'send_to': 'AW-561526616/dZxLCJz7--EBENju4IsC'});
+</script>
 <div class="woocommerce-order">
 
 	<?php
