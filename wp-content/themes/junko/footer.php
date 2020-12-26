@@ -71,9 +71,9 @@ console.log(tenYearsbefore);
                             locale: 'en',
                             maxDate:tenYearsbefore
                           });
-   jQuery('.header .logo.style1 > a').attr('href','https://phi-tuition.eu/');
+   jQuery('.header .logo.style1 > a').attr('href','https://phi-tuition.co.uk/');
    jQuery('.single-product-image .woocommerce-product-gallery figure  a').attr('href','#');
-   jQuery('[href="https://phi-tuition.eu/store/privacy-policy/"]').attr('href','https://phi-tuition.eu/we-are-phi/our-privacy-policy/');
+   jQuery('[href="https://phi-tuition.co.uk/store/privacy-policy/"]').attr('href','https://phi-tuition.co.uk/we-are-phi/our-privacy-policy/');
    jQuery(".post-type-archive-product .outofstock .product-name").append('<p style="color:#f0b903;margin-bottom:0;">Fully Booked</p>');
    jQuery(".term-available-courses .outofstock .product-name").append('<p style="color:#f0b903;margin-bottom:0;">Fully Booked</p>');   
    setTimeout(function(){
