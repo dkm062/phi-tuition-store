@@ -1,7 +1,16 @@
 /*custom js */
 jQuery(document).ready(function(){
-	jQuery('.product-content .price').append(' per month');
-	jQuery('.woocommerce-cart-form .product-price .amount').append(' per month');
+	if(!jQuery('.product_cat-books').length){
+		jQuery('.product-content .price').append(' per month');
+		// jQuery('.woocommerce-cart-form .product-price .amount').append(' per month');
+	}
+	if(window.location.href.indexOf('checkout')>0){
+		setTimeout(function(){
+			if(!jQuery('.fee').length){
+				jQuery('body').append('<style> .checkout_bullet_points{display:none !important; } </style>');
+			}
+		},1000);
+	}
 });
 /* Theme JS */
 (function($) { 

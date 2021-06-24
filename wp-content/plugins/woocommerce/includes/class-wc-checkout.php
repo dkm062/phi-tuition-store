@@ -733,6 +733,10 @@ class WC_Checkout {
 				$validate_fieldset = false;
 			}
 
+			$excl = ['billing_address_1_field',
+			'billing_city_field',
+			'billing_state_field',
+			'billing_postcode_field'];	
 			foreach ( $fieldset as $key => $field ) {
 				if ( ! isset( $data[ $key ] ) ) {
 					continue;

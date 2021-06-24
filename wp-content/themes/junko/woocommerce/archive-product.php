@@ -19,6 +19,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 get_header('shop');
+$is_books_category_class="";
+if (strpos($_SERVER[REQUEST_URI],"store/product-category/books")>-1){
+	$is_books_category='books_cat';
+}
 global $wp_query, $woocommerce_loop;
 $junko_opt = get_option( 'junko_opt' );
 $shoplayout = 'sidebar';
@@ -191,9 +195,9 @@ $junko_viewmode = Junko_Class::junko_show_view_mode();
 							*/
 							do_action( 'woocommerce_show_message' );
 						?>
-						<ul class="product_list bullet_points">
+						<ul class="product_list bullet_points <?php echo $is_books_category; ?>" >
 							<li>Fees are payable monthly. </li>
-							<li>A 10% discount is applied to the below mentioned fees if you select to attend our classes online. Apply voucher “ONLINE10” at check-out.</li>
+							<!-- <li>A 10% discount is applied to the below mentioned fees if you select to attend our classes online. Apply voucher “ONLINE10” at check-out.</li> -->
 							<li>A final discount will be applied at checkout if 2 or more classes are selected.</li>
 							<li>A fixed registration fee of £25.00 is required upon registration. </li>
 							<li>A payment for the first month is required upon registration. </li>
@@ -202,7 +206,83 @@ $junko_viewmode = Junko_Class::junko_show_view_mode();
 							<li>Fees already paid will not be refunded. </li>
 							<li>Phi Tuition reserves the right to alter the fees, without prior notification.</li>							
 						</ul>
+						<style type="text/css">
+							.about_author{
+								display: flex;
+							}
+							@media only screen and (max-width: 768px) {
+								.about_author{
+									display:block;
+								}
+								.about_author .img{
+									margin: 20px auto;
+									text-align: center;
+								}
+							}
+							.about_author .img{
+								min-width:300px ;
+							}
+							.about_author img{
+							    width: 300px;
+							    height: 450px !important;
+							}
+							.description{
+								margin-right: 20px;
+							}
+							.notBook{
+								display: none !important;
+							}
+							.abtauth .button {
+							    background: #F0B903 !important;
+							    border: none;
+							    color: #fff;
+							    font-family: Montserrat, Arial, Helvetica, sans-serif;
+							    font-size: .857em;
+							    font-weight: 500;
+							    height: 50px;
+							    letter-spacing: 0;
+							    line-height: 50px;
+							    margin: 0 0 10px 0;
+							    min-width: 240px;
+							    padding: 0 30px;
+							    text-transform: uppercase;
+							    -webkit-border-radius: 4px;
+							    -moz-border-radius: 4px;
+							    border-radius: 4px;
+							    margin-bottom: 20px !important;
+							}
+						</style>
+						<div class="abtauth notBook<?php echo $is_books_category; ?>">
+							<a download  class="button" href="http://phi-tuition.co.uk/store/wp-content/uploads/2021/06/Excelling-in-A-Level-Physics_Sample.pdf">Download a FREE Sample</a>
+							<div class="about_book">
+								<p>This series of books covers the requirements for the A-level exams.</p> 
 
+								<p>The theory is presented in a structured way in the form of Questions and Answers. Using simple steps, explanations, practice exercises, mind-maps, and tests, you will be supported to develop the understanding of each thematic unit.</p>
+
+								<p>Each book includes plenty of</p>
+								<ul>
+									<li>Solved problems</li>
+									<li>Multiple choice questions</li>
+									<li>Conceptual questions</li>
+									<li>Fill in the gaps</li>
+									<li>True or False statements</li>
+									<li>Practice Problems</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="about_author">
+								<div class="description" >
+									<h5>About the Author:</h5>
+									<p>
+									Dr Stefanidis read Physics at the Aristotle University of Thessaloniki, Greece. He received his MSc in Nuclear and Particle Physics from the University of Athens, Greece and he pursued his PhD in Particle Physics at University College London, UK. Since the early years of his studies, he worked on the ATLAS detector and the LHC accelerator at CERN, Geneva. His research focused mainly on studying the properties of the Standard Model Higgs and he developed algorithms for improving the performance of the ATLAS detector. He is the founder of Phi Tuition, a leading specialist STEM tuition centre in London. His passion for teaching Physics to young people has made him a valuable member of the Physics community. He is an active member of the Institute of Physics and often gives lectures related to teaching Physics. His students say that his knowledge is infectious. With over twenty years experience in teaching Physics to young people in the public and private sector, Dr Stefanidis has inspired many of his students to go on to study STEM subjects at prestigious universities like Oxford, Cambridge, Imperial and UCL.</p> 
+
+									<p>Dr Stefanidis remains driven to see even more young people become confident and excited about Physics as they develop a deeper understanding of its key concepts.</p>
+								</div>
+								<div class="img">
+									<img src="http://phi-tuition.co.uk/store/wp-content/uploads/2021/06/DrStathis.jpeg" height="450" width="300" alt="Dr Stathis">
+								</div>
+							</div>
+						</div>
 						<?php if ( have_posts() ) : ?>	
 							<div class="shop-products products <?php echo esc_attr($junko_viewmode);?> <?php echo esc_attr($shoplayout);?>">
 								<?php $woocommerce_loop['columns'] = $productcols; ?>
@@ -268,3 +348,22 @@ $junko_viewmode = Junko_Class::junko_show_view_mode();
 ?>
 <!-- end brand logo --> 
 <?php get_footer( 'shop' ); ?>
+<?php if( is_shop()){ ?>
+	<style type="text/css">
+		.product_cat-books{
+			display: none;
+		}
+	</style>
+<?php }?>
+<style type="text/css">
+	.books_cat{
+		display: none;
+	}
+</style>
+<?php if($is_books_category){ ?>
+	<style type="text/css">
+		#secondary .sidebar-content{
+			display: none;
+		}
+	</style>
+<?php }?>
