@@ -232,7 +232,7 @@ $junko_viewmode = Junko_Class::junko_show_view_mode();
 							.notBook{
 								display: none !important;
 							}
-							.abtauth .button {
+							.sampleDownload.button {
 							    background: #F0B903 !important;
 							    border: none;
 							    color: #fff;
@@ -251,39 +251,25 @@ $junko_viewmode = Junko_Class::junko_show_view_mode();
 							    border-radius: 4px;
 							    margin-bottom: 20px !important;
 							}
+							.abtauth{
+							    margin-top: 30px !important;
+							}
+							.shop-products .gridview:hover {
+							    border: 2px solid #F0B903;
+							}
+							.shop-products .gridview {
+							    border: 2px solid #ebebeb;
+							}
+							.shop-products.grid-view .gridview {
+							    margin-right: 10px;
+							}
+							.shop-products.grid-view .item-col{
+							    margin-bottom: 10px;
+							}
 						</style>
-						<div class="abtauth notBook<?php echo $is_books_category; ?>">
-							<a download  class="button" href="http://phi-tuition.co.uk/store/wp-content/uploads/2021/06/Excelling-in-A-Level-Physics_Sample.pdf">Download a FREE Sample</a>
-							<div class="about_book">
-								<p>This series of books covers the requirements for the A-level exams.</p> 
-
-								<p>The theory is presented in a structured way in the form of Questions and Answers. Using simple steps, explanations, practice exercises, mind-maps, and tests, you will be supported to develop the understanding of each thematic unit.</p>
-
-								<p>Each book includes plenty of</p>
-								<ul>
-									<li>Solved problems</li>
-									<li>Multiple choice questions</li>
-									<li>Conceptual questions</li>
-									<li>Fill in the gaps</li>
-									<li>True or False statements</li>
-									<li>Practice Problems</li>
-								</ul>
-							</div>
-							<hr>
-							<div class="about_author">
-								<div class="description" >
-									<h5>About the Author:</h5>
-									<p>
-									Dr Stefanidis read Physics at the Aristotle University of Thessaloniki, Greece. He received his MSc in Nuclear and Particle Physics from the University of Athens, Greece and he pursued his PhD in Particle Physics at University College London, UK. Since the early years of his studies, he worked on the ATLAS detector and the LHC accelerator at CERN, Geneva. His research focused mainly on studying the properties of the Standard Model Higgs and he developed algorithms for improving the performance of the ATLAS detector. He is the founder of Phi Tuition, a leading specialist STEM tuition centre in London. His passion for teaching Physics to young people has made him a valuable member of the Physics community. He is an active member of the Institute of Physics and often gives lectures related to teaching Physics. His students say that his knowledge is infectious. With over twenty years experience in teaching Physics to young people in the public and private sector, Dr Stefanidis has inspired many of his students to go on to study STEM subjects at prestigious universities like Oxford, Cambridge, Imperial and UCL.</p> 
-
-									<p>Dr Stefanidis remains driven to see even more young people become confident and excited about Physics as they develop a deeper understanding of its key concepts.</p>
-								</div>
-								<div class="img">
-									<img src="http://phi-tuition.co.uk/store/wp-content/uploads/2021/06/DrStathis.jpeg" height="450" width="300" alt="Dr Stathis">
-								</div>
-							</div>
-						</div>
+						
 						<?php if ( have_posts() ) : ?>	
+							<a download  class="button sampleDownload notBook<?php echo $is_books_category; ?>" href="http://phi-tuition.co.uk/store/wp-content/uploads/2021/06/Excelling-in-A-Level-Physics_Sample.pdf">Download a FREE Sample</a>
 							<div class="shop-products products <?php echo esc_attr($junko_viewmode);?> <?php echo esc_attr($shoplayout);?>">
 								<?php $woocommerce_loop['columns'] = $productcols; ?>
 								<?php woocommerce_product_subcategories();
@@ -294,6 +280,38 @@ $junko_viewmode = Junko_Class::junko_show_view_mode();
 										<?php while ( have_posts() ) : the_post(); ?>
 											<?php wc_get_template_part( 'content', 'product-archive' ); ?>
 										<?php endwhile; // end of the loop. ?>
+									</div>
+								</div>
+							</div>
+							<div class="abtauth notBook<?php echo $is_books_category; ?>">
+								<hr>
+								<div class="about_book">
+									<h5>About the Books:</h5>
+									<p>This series of books covers the requirements for the A-level exams.</p> 
+
+									<p>The theory is presented in a structured way in the form of Questions and Answers. Using simple steps, explanations, practice exercises, mind-maps, and tests, you will be supported to develop the understanding of each thematic unit.</p>
+
+									<p>Each book includes plenty of</p>
+									<ul>
+										<li>Solved problems</li>
+										<li>Multiple choice questions</li>
+										<li>Conceptual questions</li>
+										<li>Fill in the gaps</li>
+										<li>True or False statements</li>
+										<li>Practice Problems</li>
+									</ul>
+								</div>
+								<hr>
+								<div class="about_author">
+									<div class="description" >
+										<h5>About the Author:</h5>
+										<p>
+										Dr Stefanidis read Physics at the Aristotle University of Thessaloniki, Greece. He received his MSc in Nuclear and Particle Physics from the University of Athens, Greece and he pursued his PhD in Particle Physics at University College London, UK. Since the early years of his studies, he worked on the ATLAS detector and the LHC accelerator at CERN, Geneva. His research focused mainly on studying the properties of the Standard Model Higgs and he developed algorithms for improving the performance of the ATLAS detector. He is the founder of Phi Tuition, a leading specialist STEM tuition centre in London. His passion for teaching Physics to young people has made him a valuable member of the Physics community. He is an active member of the Institute of Physics and often gives lectures related to teaching Physics. His students say that his knowledge is infectious. With over twenty years experience in teaching Physics to young people in the public and private sector, Dr Stefanidis has inspired many of his students to go on to study STEM subjects at prestigious universities like Oxford, Cambridge, Imperial and UCL.</p> 
+
+										<p>Dr Stefanidis remains driven to see even more young people become confident and excited about Physics as they develop a deeper understanding of its key concepts.</p>
+									</div>
+									<div class="img">
+										<img src="http://phi-tuition.co.uk/store/wp-content/uploads/2021/06/DrStathis.jpeg" height="450" width="300" alt="Dr Stathis">
 									</div>
 								</div>
 							</div>
